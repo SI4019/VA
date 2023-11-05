@@ -36,7 +36,7 @@
                                     @forelse ($blogs as $blog)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ Storege::url('public/blogs/').$blog->image }}" class="rounded" style="width: 150px" />
+                                            <img src="{{ Storage::url('public/blogs/').$blog->image }}" class="rounded" style="width: 150px" />
                                         </td>
                                         <td>{{ $blog->title }}</td>
                                         <td>{!! $blog->content !!}</td>
@@ -64,7 +64,7 @@
         <script src="https://cdnjs.cloundflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        <scripst>
+        <script>
             @if(session()->has('success'))
                 toastr.success('{{ session('success') }}', 'BERHASIL!');
             @elseif(session()->has('error'))
