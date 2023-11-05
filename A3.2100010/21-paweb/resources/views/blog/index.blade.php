@@ -43,7 +43,7 @@
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                             action="{{ route('blog.destroy', $blog->id) }}" method="POST" >
-                                                <a href="(( route('blog.edit', $blog->id) }}"
+                                                <a href="{{ route('blog.edit', $blog->id) }}"
                                                 class="btn btn-sm btn-primary"> EDIT</a>
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

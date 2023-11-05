@@ -39,4 +39,41 @@ class BlogController extends Controller
             return redirect()->route('blog.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
+
+    public function edit(Blog $blog){
+        return view('blog.edit', compact('blog'));
+    }
+
+    public function update(Request $request, Blog $blog){
+        $this->validate($request, [
+            'title'     => 'required',
+            'content'   => 'required'
+        ]);
+
+        $blog = Blog::findOrFail($blog->id);
+
+        if($request->file('image') == ""){
+            $blog->update([
+                'title'     => $request->title,
+                'content'   => $request->content
+            ]);
+        } else {
+            Storage::disk('local')->delete('public/blogs/'.$blog->image);
+
+            $image = $request->file('image');
+            $image->storeAs('public/blogs', $image->hashName());
+
+            $blog->update([
+                'image'     =>$image->hashName(),
+                'title'     =>$request->title,
+                'content'   =>$request->content
+            ]);
+        }
+
+        if($blog){
+            return redirect()->route('blog.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        }else{
+            return redirect()->route('blog.index')->with(['error' => 'Data Gagal Diupdate!']);
+        }
+    }
 }
