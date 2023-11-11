@@ -133,5 +133,6 @@ Dengan demikian, revisi kedua sudah disipan oleh Git. Mungkin anda belum tahu ma
 
 ## Referensi
 
-1. [GIT Cheat Sheet](https://www.javatpoint.com/git-cheat-sheet)
-2. Ngetry Ubah Data
+1. [GIT Cheat Sheet](https://www.javatpoint.com/git-cheat-sheet)th
+prak 2 revisi
+rafid
