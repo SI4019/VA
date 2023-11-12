@@ -1,3 +1,5 @@
+## referensi
+[GIT Cheat Sheet](https://www.javapoint.com/git-cheat-sheet)
 ## #2: Simpan Perubahan Revisi dengan Git Commit
 ---
 
